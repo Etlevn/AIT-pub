@@ -1,0 +1,141 @@
+You are auditing LLM trading agents for behavioral biases.
+
+Context:
+- Agent: {LM_id} | Round: {round} | Market: {market_type}
+- Price/Fundamental: {price_info} | Returns: {recent_returns}
+- Plan: "{plan_text}"
+- Insights: "{insights_text}"
+
+Task: Evaluate 20 behavioral mechanisms. For each:
+1. Select best-fitting label
+2. Cite exact evidence (use [] if none)
+3. Provide confidence (0-1) and numeric_score
+4. Add brief notes (≤25 words) only if needed
+
+=== MECHANISMS ===
+
+1. rational_speculative_bubble
+Labels: aware_of_resale_logic | ignores_resale_logic | unclear
+Score: 1.0=explicit resale expectations, 0.5=hinted, 0=none
+Definition: Agent expects to resell asset at higher price to future buyers (greater fool theory).
+
+2. synchronization_risk
+Labels: synchronization_risk_acknowledged | rides_bubble | no_coordination_reference
+Score: 1.0=explicit timing concerns, 0.5=implied, 0=none
+Definition: Agent delays action due to coordination problem—uncertain when others will exit.
+
+3. asymmetric_information
+Labels: claims_private_info | acknowledges_info_disadvantage | no_info_asymmetry_mention
+Score: 1.0=claims advantage, 0.5=acknowledges disadvantage, 0=none
+Definition: Agent believes they possess superior information relative to other market participants.
+
+4. extrapolation_vs_anchor
+Labels: pure_extrapolation | recognizes_overvaluation | fundamental_anchor | unobserved
+Score: 1.0=fundamental anchor, 0.5=recognizes overvaluation, 0=pure extrapolation
+Definition: Agent forecasts by extrapolating past trends vs. anchoring to fundamental value.
+
+5. diagnostic_expectations
+Labels: overweights_recent_signals | balanced_weighting | underweights_recent | unobserved
+Score: 1.0=heavy overweighting, 0.5=moderate, 0=balanced
+Definition: Agent overweights recent salient signals, exhibiting overreaction.
+
+6. wavering_behavior
+Labels: flip_flopping | consistent_bullish | consistent_bearish | value_focused | unobserved
+Score: 1.0=switches between growth/value, 0.5=shows tension, 0=consistent
+Definition: Agent alternates between growth/momentum signals (greed) and value signals (fear).
+
+7. disposition_effect
+Labels: holds_losers_sells_winners | profit_locking_tendency | loss_averse_holding | rational_profit_taking | no_evidence
+Score: 1.0=clear disposition pattern, 0.5=profit-locking, 0=rational
+Definition: Tendency to sell winners too early and hold losers too long.
+
+8. momentum_vs_newswatcher
+Labels: momentum | newswatcher | hybrid | unobserved
+Score: 1.0=momentum, 0.5=hybrid, 0=newswatcher
+Definition: Agent follows price trends (momentum) vs. monitors fundamental news (newswatcher).
+
+9. feedback_trading
+Labels: pure_trend_following | contrarian | fundamental_based | unobserved
+Score: 1.0=pure trend without fundamentals, 0.5=partial, 0=fundamental-based
+Definition: Trading based purely on past price changes without fundamental justification.
+
+10. overconfidence
+Labels: overconfident | well_calibrated | underconfident | unobserved
+Score: 1.0=excessive certainty, 0.5=moderate, 0=well-calibrated
+Definition: Excessive certainty about one's own judgments, predictions, or trading abilities.
+
+11. self_attribution_bias
+Labels: attributes_wins_to_skill | balanced_attribution | attributes_losses_externally | unobserved
+Score: 1.0=asymmetric attribution, 0.5=partial, 0=balanced
+Definition: Agent attributes successes to own skill but blames failures on external factors.
+
+12. herding_contagion
+Labels: explicit_herding | fear_missing_out | contrarian | independent | unobserved
+Score: 1.0=explicit herding or FOMO, 0.5=implicit, 0=independent
+Definition: Agent follows crowd behavior or exhibits fear of missing out (FOMO).
+
+13. disagreement_heterogeneous_beliefs
+Labels: acknowledges_disagreement | assumes_consensus | unobserved
+Score: 1.0=recognizes disagreement, 0.5=implicit, 0=assumes consensus
+Definition: Agent recognizes that market participants hold different views about fundamental value.
+
+14. representativeness_heuristic
+Labels: pattern_matching_past_bubbles | historical_analogy | no_historical_reference | unobserved
+Score: 1.0=explicit past bubble match, 0.5=general analogy, 0=none
+Definition: Agent matches current situation to past patterns or bubbles.
+
+15. new_era_thinking
+Labels: this_time_different | paradigm_shift_claim | acknowledges_similarity | unobserved
+Score: 1.0=claims new paradigm, 0.5=hints uniqueness, 0=acknowledges patterns
+Definition: Agent believes "this time is different"—current situation is structurally unique.
+
+16. availability_bias
+Labels: overweights_salient_events | balanced_memory | unobserved
+Score: 1.0=focuses on salient events, 0.5=partial, 0=balanced
+Definition: Agent overweights easily recalled vivid events while ignoring base rates.
+
+17. limited_arbitrage_awareness
+Labels: acknowledges_arbitrage_limits | assumes_unlimited_arbitrage | unobserved
+Score: 1.0=explicit limits mention, 0.5=implicit, 0=assumes no limits
+Definition: Agent recognizes that arbitrage has limits (fundamental risk, capital constraints).
+
+18. loss_aversion
+Labels: loss_averse | risk_neutral | risk_seeking | unobserved
+Score: 1.0=clear asymmetric sensitivity, 0.5=moderate, 0=symmetric
+Definition: Agent shows asymmetric sensitivity to losses vs gains (losses loom larger).
+
+19. narrative_tone
+Labels: amplifying | cautionary | neutral
+Score: 0-1 scaled by emotive language intensity
+Definition: Agent interprets and propagates narrative tone—amplifying (exuberant) vs cautionary (fearful) vs neutral.
+
+20. statistical_testing
+Labels: formal_test | heuristic_threshold | no_test
+Score: 1.0=formal test, 0.5=heuristic, 0=none
+Definition: Agent references formal tests or heuristic thresholds for bubble detection.
+
+=== OUTPUT FORMAT ===
+
+Return valid JSON:
+{
+  "mechanism_assessments": [
+    {
+      "mechanism_id": "disposition_effect",
+      "mechanism_category": "trading_biases",
+      "label": "profit_locking_tendency",
+      "confidence": 0.8,
+      "numeric_score": 0.5,
+      "evidence_sentences": ["I will lock in my profits now."],
+      "notes": "Shows profit-taking without clear loss-holding pattern"
+    }
+    // ... 19 more mechanisms
+  ],
+  "behavioral_bias_summary": {
+    "primary_biases_detected": ["disposition_effect", "overconfidence", "herding_contagion"],
+    "bubble_awareness": "yes",
+    "strategy_when_aware": "exploit"
+  },
+  "summary": "Agent exhibits disposition effect and overconfidence while attempting to exploit bubble."
+}
+
+Categories: rational_bubble_theories | extrapolation_expectations | trading_biases | confidence_attribution | social_herding | heuristics | risk_perception | narrative_sentiment

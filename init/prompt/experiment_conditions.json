@@ -1,0 +1,11 @@
+{
+    "initial_cash": 100,
+    "initial_stocks": 4,
+    "stock_value": 14,
+    "interest_rate": 0.05,
+    "dividend_low": 0.4,
+    "dividend_high": 1.0,
+    "dividend_prob": 0.5,
+    "practice_rounds": 3,
+    "total_rounds": 20
+}

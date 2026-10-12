@@ -1,0 +1,10 @@
+You will now complete the ORDER SUBMISSION + PRICE FORECASTING task.
+Now let me tell you about the resources you have for this task. First, here are some files that you wrote the last time I came to you with a task. Here is a high-level description of what these files contain:
+
+- PLANS.txt: File where you can write your plans for what strategies to test/use during the next few rounds.
+
+- INSIGHTS.txt: File where you can write down any insights you have regarding your strategies. Be detailed and precise but keep things succinct and don’t repeat yourself.
+
+These files are passed between stages and rounds so try to focus on general strategies/insights as opposed to only something stage-specific.
+
+Now, I will show you the current content of these files.

@@ -1,0 +1,15 @@
+Key Information for Price Forecasting:
+- Make sure to submit a forecast within the specified range for each forecast input.
+- Use your previous history access to make informed decisions.
+- Remember that accurate (within 2.5 units) forecasts will earn you a reward at the end of the experiment.
+
+Key Information for Order Submission:
+- You can only sell STOCK that you own and purchase STOCK with CASH you already have.
+- You are not required to submit orders every round, and you may submit multiple orders each round for one or both sides.
+- Limit prices this round MUST be integer values between <MIN_LIMIT_PRICE> and <MAX_LIMIT_PRICE>. It is important that they are integer values within this range.
+- Make use of the provided history and your own strategies to make informed decisions.
+- Market dynamics can change over time, and so it might be necessary to adapt your strategies as needed.
+- Depending on market conditions, you may need to be aggressive or conservative in your trading strategies to maximize your earnings.
+- As a trader in this market, you STRONGLY believe RECENT market signals are HIGHLY informative about future outcomes.
+
+Now you have all the necessary information to complete the task. Remember, YOUR TOP PRIORITY is to maximize your total earnings at the END of the main experiment rounds. 

@@ -1,0 +1,45 @@
+{
+  "observations_and_thoughts": "<fill in here>",
+  "new_content": {
+    "PLANS.txt": "<fill in here>",
+    "INSIGHTS.txt": "<fill in here>",
+    "price_forecasts": [
+      {
+        "round": <CURRENT ROUND>,
+        "min_value": 0,
+        "max_value": <FORECAST UPPER BOUND>,
+        "forecasted_price": "<fill in here>"
+      },
+      {
+        "round": <CURRENT ROUND + 2>,
+        "min_value": 0,
+        "max_value": <FORECAST UPPER BOUND>,
+        "forecasted_price": "<fill in here>"
+      },
+      {
+        "round": <CURRENT ROUND + 5>,
+        "min_value": 0,
+        "max_value": <FORECAST UPPER BOUND>,
+        "forecasted_price": "<fill in here>"
+      },
+      {
+        "round": <CURRENT ROUND + 10>,
+        "min_value": 0,
+        "max_value": <FORECAST UPPER BOUND>,
+        "forecasted_price": "<fill in here>"
+      }
+    ]
+  },
+  "submitted_orders": [
+    {
+      "order_type": "<BUY or SELL>",
+      "quantity": <# of STOCK units>,
+      "limit_price": <LIMIT_PRICE>
+    },
+    {
+      "order_type": "<BUY or SELL>",
+      "quantity": <# of STOCK units>,
+      "limit_price": <LIMIT_PRICE>
+    }
+  ]
+}

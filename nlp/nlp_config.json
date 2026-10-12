@@ -1,0 +1,43 @@
+{
+  "file_settings": {
+    "default_input_file": "/Users/you/Documents/Projects/AIT/exp/_sgl/sgl_output.csv",
+    "prompt_template": "nlp_prmt_2.txt"
+  },
+  "processing_settings": {
+    "max_processing_rows": null,
+    "max_workers": 100
+  },
+  "output_settings": {
+    "save_individual_json": true
+  },
+  "api_settings": {
+    "api_mode": "deepseek",
+    "model_name": "deepseek-chat"
+  },
+  "evaluation_settings": {
+    "evaluate_plan": true,
+    "evaluate_insight": true
+  },
+  "mechanism_order": [
+    "rational_speculative_bubble",
+    "synchronization_risk",
+    "asymmetric_information",
+    "extrapolation_vs_anchor",
+    "diagnostic_expectations",
+    "wavering_behavior",
+    "disposition_effect",
+    "momentum_vs_newswatcher",
+    "feedback_trading",
+    "overconfidence",
+    "self_attribution_bias",
+    "herding_contagion",
+    "disagreement_heterogeneous_beliefs",
+    "representativeness_heuristic",
+    "new_era_thinking",
+    "availability_bias",
+    "limited_arbitrage_awareness",
+    "loss_aversion",
+    "narrative_tone",
+    "statistical_testing"
+  ]
+}

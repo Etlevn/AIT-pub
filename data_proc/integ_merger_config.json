@@ -1,0 +1,13 @@
+{
+  "root_directory": "/Users/you/Documents/Projects/AIT",
+  "out_dir": "_sgl",
+  "run_rx": true,
+  "rx_expected_filename": "_rX.csv",
+  "rx_merged_output": "sgl_rx.csv",
+  "run_market": true,
+  "market_expected_filename": "_mkt.csv",
+  "market_merged_output": "sgl_mkt.csv",
+  "run_output": true,
+  "output_expected_filename": "_output.csv",
+  "output_merged_output": "sgl_output.csv"
+}

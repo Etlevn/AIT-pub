@@ -1,0 +1,13 @@
+{
+  "market_type": "sgl",
+  "root_directory": "/Users/you/Documents/Projects/AIT",
+  "experiment_directory": "",
+  "run_market": true,
+  "run_rx": true,
+  "run_output": true,
+  "market_output_filename": "_mkt.csv",
+  "rx_output_filename": "_rX.csv",
+  "output_output_filename": "_output.csv"
+}
+
+
